@@ -214,6 +214,7 @@ coef(summary(lm(csat ~ C(region, contr.helmert),
                        
 ##   2. Try adding region to the model. Are there significant differences
 ##      across the four regions?
-        energy_metro_region.regression <- lm(energy ~ metro*region, # regression formula
+        energy_metro_region.regression <- lm(energy ~ metro*income+region, # regression formula
                                            data=states.data) # data set
         coef(summary(energy_metro_region.regression))
+        anova(energy_metro_region.regression)
