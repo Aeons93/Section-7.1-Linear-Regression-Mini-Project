@@ -207,6 +207,13 @@ coef(summary(lm(csat ~ C(region, contr.helmert),
 
 ##   1. Add on to the regression equation that you created in exercise 1 by
 ##      generating an interaction term and testing the interaction.
-
+        
+        energy_metro.mod.interaction <- lm(energy ~ metro*income, # regression formula
+                                data=states.data) # data set
+        coef(summary(energy_metro.mod.interaction))
+                       
 ##   2. Try adding region to the model. Are there significant differences
 ##      across the four regions?
+        energy_metro_region.regression <- lm(energy ~ metro*region, # regression formula
+                                           data=states.data) # data set
+        coef(summary(energy_metro_region.regression))
